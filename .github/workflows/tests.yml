@@ -60,5 +60,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/devops-api:latest
-            ghcr.io/${{ github.repository_owner }}/devops-api:${{ github.sha }}
+            ghcr.io/crazykickassguy/devops-api:latest
+            ghcr.io/crazykickassguy/devops-api:${{ github.sha }}
