@@ -19,7 +19,8 @@ services:
     ports:
       - "8000:8000"
     environment:
-      DATABASE_URL: postgresql://user:password@db:5432/items_db
+
+      DATABASE_URL: postgresql://userman1:pass123123@db:5432/items_db
     depends_on:
       - db
 
