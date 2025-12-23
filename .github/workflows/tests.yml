@@ -1,4 +1,3 @@
-
 name: DevOps-CI
 
 on: [push]
@@ -7,7 +6,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
       - name: Start Services
         run: docker compose up -d --build
@@ -30,13 +30,13 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install Test Dependencies
+      - name: Install dependencies
         run: pip install pytest requests
 
       - name: Run Pytest
         run: pytest tests/test_main.py
 
-        - name: Show Docker Logs on Failure
+      - name: Show Docker Logs on Failure
         if: failure()
         run: |
           docker compose logs fastapi_api
